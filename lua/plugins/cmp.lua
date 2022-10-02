@@ -40,16 +40,10 @@ cmp.setup{
 	['<Down>'] = cmp.mapping(cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }), {'i'}),
 	['<Up>'] = cmp.mapping(cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }), {'i'}),
 
-	["<Enter>"] = cmp.mapping({
-		i = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false }),
-		c = function(fallback)
-			if cmp.visible() then
-				cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
-			else
-				fallback()
-			end
-		end
-	})
+	["<Enter>"] = cmp.mapping.confirm {
+      behavior = cmp.ConfirmBehavior.Insert,
+      select = true,
+    },
 	},
 
 	sources = cmp.config.sources({
