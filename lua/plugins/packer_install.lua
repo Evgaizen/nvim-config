@@ -58,4 +58,11 @@ return require('packer').startup(function()
 			require('plugins/tree-sitter')
 		end
 	}
+
+	use {
+		'morhetz/gruvbox',
+		config = function ()
+			vim.cmd[[autocmd vimenter * ++nested colorscheme gruvbox]]
+		end
+	}
 end)
