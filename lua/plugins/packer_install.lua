@@ -40,7 +40,7 @@ return require('packer').startup(function()
 			'hrsh7th/cmp-nvim-lua'
 		},
 		config = function()
-			require('plugins/cmp')
+			require('plugins.cmp')
 		end
 	}
 
@@ -48,21 +48,44 @@ return require('packer').startup(function()
 	use {
 		'williamboman/nvim-lsp-installer',
 		config = function()
-			require('plugins/lsp-installer')
+			require('plugins.lsp-installer')
 		end
 	}
 
 	use {
 		'nvim-treesitter/nvim-treesitter',
 		config = function()
-			require('plugins/tree-sitter')
+			require('plugins.tree-sitter')
 		end
 	}
 
 	use {
-		'morhetz/gruvbox',
+		'sainnhe/gruvbox-material',
 		config = function ()
-			vim.cmd[[autocmd vimenter * ++nested colorscheme gruvbox]]
+			vim.cmd[[color gruvbox-material]]
 		end
 	}
+
+	-- Прогресс загрузки LSP
+	use {
+		'j-hui/fidget.nvim',
+		config = function()
+			require('fidget').setup({
+				align = {
+					bottom = true,
+					right = true,
+				}
+			})
+		end
+	}
+
+	-- Статус лайн 
+	use {
+		'nvim-lualine/lualine.nvim',
+		requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+		config = function()
+			require('plugins.lualine')
+		end
+	}
+
 end)
