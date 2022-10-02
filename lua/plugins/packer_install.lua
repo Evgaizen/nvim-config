@@ -108,4 +108,17 @@ return require('packer').startup(function()
 		end
 	}
 
+	-- Автозакрытик скобок
+	use {
+		'windwp/nvim-autopairs',
+		config = function()
+			require('nvim-autopairs').setup {}
+		end
+	}
+
+	use {
+		'nvim-telescope/telescope.nvim',
+		requires = { {'nvim-lua/plenary.nvim'} }
+	}
+
 end)
