@@ -99,4 +99,13 @@ return require('packer').startup(function()
 		 end
 	}
 
+	-- Статусбар для буфферов
+	use {
+		'akinsho/bufferline.nvim',
+		requires = 'kyazdani42/nvim-web-devicons',
+		config = function()
+			require('plugins.bufferline')
+		end
+	}
+
 end)
