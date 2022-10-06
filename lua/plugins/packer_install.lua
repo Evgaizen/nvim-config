@@ -17,6 +17,12 @@ return require('packer').startup(function()
 			-- require('plugins.lspkind')
 		end
 	}
+	
+	-- Просмотрщик MD
+	use {
+		"iamcco/markdown-preview.nvim",
+		run = function() vim.fn["mkdp#util#install"]() end,
+	}
 
 	-- Удобное меню для обозрения проблем LSP
 	use {
