@@ -22,13 +22,20 @@ return require('packer').startup(function()
 	}
 
 	use {
+		"glepnir/dashboard-nvim",
+		config = function ()
+			require('plugins.dashboard')
+		end
+	}
+
+	use {
 		'sainnhe/gruvbox-material',
 		config = function ()
 			vim.cmd[[color gruvbox-material]]
 		end
 	}
 
-	-- Статус лайн 
+	-- Статус лайн
 	use {
 		'nvim-lualine/lualine.nvim',
 		requires = { 'kyazdani42/nvim-web-devicons', opt = true },
@@ -46,7 +53,7 @@ return require('packer').startup(function()
 		end
 	}
 
-	-- Автозакрытик скобок
+	-- Автозакрытие скобок
 	use {
 		'windwp/nvim-autopairs',
 		config = function()
