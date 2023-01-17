@@ -43,11 +43,17 @@ opt.hidden = true
 -- Нормальное поведение backspace
 opt.backspace = 'eol,start,indent'
 
+-- Force signcolumn
+opt.signcolumn = "yes"
+
 -- Инкриментальный поиск
 opt.incsearch = true
 
 -- Бэкапы файла
 opt.backup = false
+
+-- Время обновления
+opt.updatetime = 300
 
 -- Своп файл
 opt.swapfile = false

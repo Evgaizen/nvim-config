@@ -7,17 +7,6 @@ return require('packer').startup(function()
 	-- Добавляем Packer в список, чтобы он обновлял сам себя
 	use 'wbthomason/packer.nvim'
 
-	-- LSP сервер
-	use 'neovim/nvim-lspconfig'
-	
-	-- Иконки для автодополнения
-	use {
-		'onsails/lspkind-nvim',
-		config = function()
-			-- require('plugins.lspkind')
-		end
-	}
-	
 	-- Просмотрщик MD
 	use {
 		"iamcco/markdown-preview.nvim",
@@ -32,56 +21,11 @@ return require('packer').startup(function()
 			require("trouble").setup {}
 		end,
 	}
-	
-	-- Автодополнение
-	use {
-		'hrsh7th/nvim-cmp',
-		requires = {
-			'L3MON4D3/LuaSnip',
-			'saadparwaiz1/cmp_luasnip',
-			'hrsh7th/cmp-nvim-lsp',
-			'hrsh7th/cmp-path',
-			'hrsh7th/cmp-emoji',
-			'hrsh7th/cmp-nvim-lsp-signature-help',
-			'hrsh7th/cmp-nvim-lua'
-		},
-		config = function()
-			require('plugins.cmp')
-		end
-	}
-
-	-- Инсталлер для серверов LSP
-	use {
-		'williamboman/nvim-lsp-installer',
-		config = function()
-			require('plugins.lsp-installer')
-		end
-	}
-
-	use {
-		'nvim-treesitter/nvim-treesitter',
-		config = function()
-			require('plugins.tree-sitter')
-		end
-	}
 
 	use {
 		'sainnhe/gruvbox-material',
 		config = function ()
 			vim.cmd[[color gruvbox-material]]
-		end
-	}
-
-	-- Прогресс загрузки LSP
-	use {
-		'j-hui/fidget.nvim',
-		config = function()
-			require('fidget').setup({
-				align = {
-					bottom = true,
-					right = true,
-				}
-			})
 		end
 	}
 
@@ -125,7 +69,7 @@ return require('packer').startup(function()
 	-- Поиск
 	use {
 		'nvim-telescope/telescope.nvim',
-		requires = { 
+		requires = {
 			'nvim-lua/plenary.nvim',
 			{'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 		},
@@ -134,11 +78,9 @@ return require('packer').startup(function()
 		end
 	}
 
+	-- LSP
 	use {
-		'jose-elias-alvarez/null-ls.nvim',
-		config = function ()
-			require('plugins.null-ls')
-		end
+		'neoclide/coc.nvim',
+		branch = 'release',
 	}
-
 end)
