@@ -57,3 +57,6 @@ opt.encoding = 'UTF-8'
 
 -- Шрифт
 opt.guifont = 'JetBrains Mono:h14'
+
+-- Подсветка текущей строки
+opt.cursorline = true
