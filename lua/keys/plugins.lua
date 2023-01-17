@@ -1,8 +1,7 @@
 require('keys.alias')
 
 -- Файловый менеджер
-nm('<Leader>nn', '<cmd>NvimTreeToggle<CR>')
-nm('<Leader>nf', '<cmd>NvimTreeFindFile<CR>')
+nm('<Leader>nn', '<cmd>Telescope file_browser<CR>')
 
 -- Telescope
 nm('<Leader>ff', '<cmd>Telescope find_files<CR>')

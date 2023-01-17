@@ -13,15 +13,6 @@ return require('packer').startup(function()
 		run = function() vim.fn["mkdp#util#install"]() end,
 	}
 
-	-- Удобное меню для обозрения проблем LSP
-	use {
-		"folke/trouble.nvim",
-		requires = "kyazdani42/nvim-web-devicons",
-		config = function()
-			require("trouble").setup {}
-		end,
-	}
-
 	use {
 		'sainnhe/gruvbox-material',
 		config = function ()
@@ -36,17 +27,6 @@ return require('packer').startup(function()
 		config = function()
 			require('plugins.lualine')
 		end
-	}
-
-	-- Файловый менеджер
-	use {
-		'kyazdani42/nvim-tree.lua',
-		 requires = {
-			'kyazdani42/nvim-web-devicons', 
-		 },
-		 config = function ()
-		 	require('plugins.nvim-tree')
-		 end
 	}
 
 	-- Статусбар для буфферов
@@ -71,7 +51,8 @@ return require('packer').startup(function()
 		'nvim-telescope/telescope.nvim',
 		requires = {
 			'nvim-lua/plenary.nvim',
-			{'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+			{'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
+			'nvim-telescope/telescope-file-browser.nvim'
 		},
 		config = function ()
 			require('plugins.telescope')
