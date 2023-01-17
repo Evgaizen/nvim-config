@@ -13,6 +13,14 @@ return require('packer').startup(function()
 		run = function() vim.fn["mkdp#util#install"]() end,
 	}
 
+	-- Красивые уведомления
+	use {
+		"rcarriga/nvim-notify",
+		config = function()
+			require('plugins.notify')
+		end
+	}
+
 	use {
 		'sainnhe/gruvbox-material',
 		config = function ()
