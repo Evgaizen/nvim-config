@@ -35,7 +35,7 @@ nm('<Leader>gy', '<Plug>(coc-type-definition)')
 nm('<Leader>gi', '<Plug>(coc-implementation)')
 nm('<Leader>gr', '<Plug>(coc-references)')
 nm('<Leader>ga', '<Plug>(coc-codeaction-cursor)')
--- Use K to show documentation in preview window
+-- Показ документации для токена
 function _G.show_docs()
     local cw = vim.fn.expand('<cword>')
     if vim.fn.index({'vim', 'help'}, vim.bo.filetype) >= 0 then
