@@ -9,3 +9,6 @@ require('keys.plugins')
 
 -- Plugins
 require('plugins.packer_install')
+
+-- CocExtensions
+require('plugins.coc_settings')

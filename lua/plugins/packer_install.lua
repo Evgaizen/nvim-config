@@ -53,14 +53,6 @@ return require('packer').startup(function()
 		end
 	}
 
-	-- Автозакрытие скобок
-	use {
-		'windwp/nvim-autopairs',
-		config = function()
-			require('nvim-autopairs').setup {}
-		end
-	}
-
 	-- Поиск
 	use {
 		'nvim-telescope/telescope.nvim',
