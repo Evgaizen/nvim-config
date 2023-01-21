@@ -21,7 +21,7 @@ local opts = {silent = true, noremap = true, expr = true, replace_keycodes = fal
 keyset("i", "<TAB>", 'coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "<TAB>" : coc#refresh()', opts)
 keyset("i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], opts)
 
-keyset("i", "<Leader>", [[coc#pum#visible() ? coc#pum#confirm() : "<Leader>"]], opts)
+keyset("i", "<S-CR>", [[coc#pum#visible() ? coc#pum#confirm() : "<S-CR>"]], opts)
 
 -- Вызов автодополнения
 keyset("i", "<c-c>", "coc#refresh()", {silent = true, expr = true})
