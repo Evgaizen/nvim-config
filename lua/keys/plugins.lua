@@ -3,6 +3,9 @@ require('keys.alias')
 -- Файловый менеджер
 nm('<Leader>nn', '<cmd>Telescope file_browser<CR>')
 
+-- Bufferline
+nm('<Leader>bf', '<cmd>BufferLinePick<CR>')
+
 -- Telescope
 nm('<Leader>ff', '<cmd>Telescope find_files<CR>')
 nm('<Leader>fw', '<cmd>Telescope live_grep<CR>')
