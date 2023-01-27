@@ -1,7 +1,7 @@
 require('keys.alias')
 
 -- Файловый менеджер
-nm('<Leader>nn', '<cmd>Telescope file_browser<CR>')
+nm('<Leader>nn', '<cmd>NnnExplorer<CR>')
 
 -- Bufferline
 nm('<Leader>bf', '<cmd>BufferLinePick<CR>')

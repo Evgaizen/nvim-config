@@ -22,6 +22,13 @@ return require('packer').startup(function()
 	}
 
 	use {
+		"luukvbaal/nnn.nvim",
+		config = function ()
+			require("nnn").setup()
+		end
+	}
+
+	use {
 		"glepnir/dashboard-nvim",
 		config = function ()
 			require('plugins.dashboard')
@@ -59,7 +66,6 @@ return require('packer').startup(function()
 		requires = {
 			'nvim-lua/plenary.nvim',
 			{'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
-			'nvim-telescope/telescope-file-browser.nvim'
 		},
 		config = function ()
 			require('plugins.telescope')
