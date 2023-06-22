@@ -40,6 +40,10 @@ return {
                     { name = 'buffer' },
                     { name = 'path' },
                 }),
+                mapping = cmp.mapping.preset.insert({
+                    ['<C-Space>'] = cmp.mapping.complete(),
+                    ['<CR>'] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior, select = true })
+                })
             }
         end,
     },
@@ -48,4 +52,20 @@ return {
         event = 'VeryLazy',
         opts = {},
     },
+    {
+        'glepnir/lspsaga.nvim',
+        event = { 'LspAttach' },
+        config = function()
+            local keymap = vim.keymap.set
+            local opts = { noremap = true, silent = true }
+
+            keymap('n', 'K', '<CMD>Lspsaga hover_doc<CR>', opts)
+            keymap('n', '<LEADER>gd', '<CMD>Lspsaga goto_definition<CR>', opts)
+            keymap('n', '<LEADER>gp', '<CMD>Lspsaga preview_definition<CR>', opts)
+            keymap('n', '<LEADER>gr', '<CMD>Lspsaga lsp_finder<CR>', opts)
+            keymap('n', '<LEADER>ga', '<CMD>Lspsaga code_action<CR>', opts)
+
+            require('lspsaga').setup({})
+        end
+    }
 }

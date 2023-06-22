@@ -30,5 +30,21 @@ return {
                 }
             }
         }
+    },
+    {
+        'nvim-tree/nvim-tree.lua',
+        keys = {
+            {
+                '<LEADER>nf',
+                '<CMD>:NvimTreeFindFile<CR>',
+                desc = 'Open tree and focus on current buffer'
+            },
+            {
+                '<LEADER>nn',
+                '<CMD>:NvimTreeToggle<CR>',
+                desc = 'Toggle nvim tree'
+            }
+        },
+        opts = {}
     }
 }
