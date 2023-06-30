@@ -1,6 +1,9 @@
 return {
     {
         'hoob3rt/lualine.nvim',
+        dependencies = {
+            'arkav/lualine-lsp-progress',
+        },
         event = 'VeryLazy',
         opts = {
             options = {
@@ -12,7 +15,12 @@ return {
             },
             sections = {
                 lualine_a = { 'mode' },
-                lualine_b = { 'branch' },
+                lualine_b = { 
+                    {
+                        'lsp_progress',
+                        display_components = { 'lsp_client_name', { 'title', 'percentage', 'message' }},
+                    }
+                },
                 lualine_c = { {
                     'filename',
                     file_status = true,
